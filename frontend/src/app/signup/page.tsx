@@ -2,18 +2,18 @@ import AuthScreen from '@/components/common/authScreen';
 import AuthForm from '@/components/login/loginForm';
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
-  title: 'Log In | TutorsDial',
+  title: 'Sign Up | TutorsDial',
   description: 'Securely access your TutorsDial account to manage your dashboard, settings, and preferences.',
   metadataBase: new URL('https://www.tutorsdial.com'),
   alternates: {
-    canonical: '/login',
+    canonical: '/signup',
     languages: {
-      'en-US': '/login',
+      'en-US': '/signup',
       'es-ES': '/es/iniciar-sesión',
     },
   },
   openGraph: {
-    title: 'Log In to TutorsDial',
+    title: 'Sign Up to TutorsDial',
     description: 'Access your TutorsDial dashboard, settings, and preferences securely.',
     url: 'https://www.tutorsdial.com/login',
     siteName: 'TutorsDial',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Log In to TutorsDial',
+    title: 'Sign up to TutorsDial',
     description: 'Securely access your TutorsDial dashboard and settings.',
     images: ['https://www.tutorsdial.com/login-page.png'],
   },
