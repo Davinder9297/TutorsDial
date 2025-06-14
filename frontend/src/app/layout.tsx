@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   keywords: ['productivity', 'task management', 'collaboration software'],
   openGraph: {
     title: 'TutorsDial – Empower Your Productivity',
-    description: 'Streamline tasks, track progress, and collaborate in one platform.',
+    description: 'Connect with verified tutors and real students on TutorsDial.com—your trusted platform for finding quality tutoring and learning opportunities.',
     url: 'https://www.tutorsdial.com',
     siteName: 'TutorsDial',
     type: 'website',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'TutorsDial – Empower Your Productivity',
-    description: 'Streamline tasks, track progress, and collaborate in one platform.',
+    description: 'Connect with verified tutors and real students on TutorsDial.com—your trusted platform for finding quality tutoring and learning opportunities.',
     images: ['https://www.tutorsdial.com/og/homepage.png'],
   },
 };
