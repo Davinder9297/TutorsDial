@@ -8,8 +8,9 @@ import { MagicCard } from "@/components/magicui/magic-card";
 import MaxWidthWrapper from "../global/max-width-wrapper";
 import Image from "next/image";
 import SectionHeading from "../common/headings";
+import { AvatarCircles } from "@/components/magicui/avatar-circles";
 
-function Services() {
+function ExclusiveServices() {
   const swiperRef = useRef<SwiperRef>(null);
   const [progress, setProgress] = useState(0);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -103,6 +104,33 @@ function Services() {
     };
   }, []);
 
+  const avatars = [
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/16860528",
+    profileUrl: "https://github.com/dillionverma",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/20110627",
+    profileUrl: "https://github.com/tomonarifeehan",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/106103625",
+    profileUrl: "https://github.com/BankkRoll",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/59228569",
+    profileUrl: "https://github.com/safethecode",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/59442788",
+    profileUrl: "https://github.com/sanjay-mali",
+  },
+  {
+    imageUrl: "https://avatars.githubusercontent.com/u/89768406",
+    profileUrl: "https://github.com/itsarghyadas",
+  },
+];
+
   return (
     <section className="relative mb-20">
       <MaxWidthWrapper className="md:pt-10 pt-10">
@@ -186,17 +214,7 @@ function Services() {
         </p>
 
         {/* Students Section */}
-        <div className="flex items-center gap-2 mt-3">
-          {/* Sample avatars */}
-          <div className="flex -space-x-2">
-            <Image src="/images/home/courses/stu1.png" alt="Student" width={30} height={30} className="rounded-full border-2 border-white" />
-            <Image src="/images/home/courses/stu2.png" alt="Student" width={30} height={30} className="rounded-full border-2 border-white" />
-            <Image src="/images/home/courses/stu3.png" alt="Student" width={30} height={30} className="rounded-full border-2 border-white" />
-            <Image src="/images/home/courses/stu4.png" alt="Student" width={30} height={30} className="rounded-full border-2 border-white" />
-            <Image src="/images/home/courses/stu5.png" alt="Student" width={30} height={30} className="rounded-full border-2 border-white" />
-          </div>
-          <span className="text-sm text-gray-600">+ 40 students</span>
-        </div>
+        <AvatarCircles numPeople={99} avatarUrls={avatars} />
       </div>
     </div>
                 </MagicCard>
@@ -232,4 +250,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default ExclusiveServices;

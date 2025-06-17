@@ -1,9 +1,13 @@
-import CourseCarousel from "@/components/home/courseCarousel"
+import ExclusiveServices from "@/components/home/exclusiveBundles"
+import HowItWorks from "@/components/home/howItWorks"
 
 export default function Home() {
   return (
     <div className="p-10">
-      <CourseCarousel />
+      <div><HowItWorks /> </div>
+     
+<div><ExclusiveServices/>
+</div>   
     </div>
   )
 }
