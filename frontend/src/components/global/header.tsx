@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -48,7 +47,7 @@ const Header = () => {
             </div>
 
             {/* ✅ Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-16 z-10">
+            <nav className="hidden lg:flex items-center gap-16 z-10">
               <div
                 onClick={()=>router.push("/")}
                 className="hover:text-[var(--primary-hover)] text-[var(--primary-text)] font-medium cursor-pointer"
@@ -82,7 +81,7 @@ const Header = () => {
             </nav>
 
             {/* ✅ Mobile Menu Toggle */}
-            <div className="md:hidden z-20">
+            <div className="lg:hidden z-20">
               <button onClick={() => setIsOpen(!isOpen)}>
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -91,7 +90,7 @@ const Header = () => {
 
           {/* ✅ Mobile Dropdown */}
           {isOpen && (
-            <div className="md:hidden bg-[#FFD1BC] rounded-b-lg px-4 py-4 space-y-4 transition-all duration-300">
+            <div className="lg:hidden bg-[var(primary-bg)] rounded-b-lg px-4 py-4 space-y-4 transition-all duration-300 shadow-md">
               <Link href="/" className="block text-[var(--primary-button)]">
                 Home
               </Link>
@@ -107,7 +106,7 @@ const Header = () => {
                 </button>
               </Link>
               <Link href="/signup">
-                <button className="w-full bg-[var(--primary-button)] text-white font-semibold py-2 rounded-md">
+                <button className="w-full bg-[var(--primary-button)] text-white font-semibold py-2 rounded-md mt-4">
                   SIGN UP
                 </button>
               </Link>

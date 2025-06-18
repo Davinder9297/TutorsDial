@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 import { ButtonHTMLAttributes, InputHTMLAttributes } from "react";
 
 export declare interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,7 +13,7 @@ export declare interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElem
 export declare interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   tintColor?: string;
-  Icon?: React.ComponentType<unknown>;
+Icon?: LucideIcon;
   labelStyle?: string;
   inputStyle?: string;
   className?: string;

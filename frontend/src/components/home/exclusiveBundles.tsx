@@ -133,7 +133,7 @@ function ExclusiveServices() {
 
   return (
     <section className="relative mb-20">
-      <MaxWidthWrapper className="md:pt-10 pt-10">
+      <MaxWidthWrapper className="">
         <header>
           <SectionHeading
   imgSrc="/images/home/heading-line.png"
@@ -187,9 +187,9 @@ function ExclusiveServices() {
                   gradientTo={"#ff6300"}
                   // className="bg-gradient-to-r from-[#171717] via-[#323335] to-[#171717] shadow-lg"
                 >
-                  <div className="flex max-w-5xl w-full rounded-xl overflow-hidden shadow-lg bg-white">
+                  <div className="flex md:flex-row flex-col max-w-5xl w-full rounded-xl overflow-hidden shadow-lg bg-white">
       {/* Left Side with Background & Image */}
-      <div className="bg-[#03989E] flex items-center justify-center w-1/2 p-6 relative">
+      <div className="bg-[#03989E] flex items-center justify-center md:w-1/2 p-6 relative w-full">
         <Image
           src="/images/home/courses/course.png" // change to your path
           alt="Course Logo"
@@ -204,7 +204,7 @@ function ExclusiveServices() {
       </div>
 
       {/* Right Side with Content */}
-      <div className="w-1/2 p-6 space-y-3 border-t-[1px] rounded-tr-2xl">
+      <div className="md:w-1/2 w-full p-6 space-y-3 border-t-[1px] rounded-tr-2xl">
         <p className="text-xs text-gray-500">1 - 28 July 2022</p>
         <h2 className="text-xl font-bold text-[var(--primary-button)]">
           Product Management Basic - Course

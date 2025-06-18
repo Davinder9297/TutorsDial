@@ -23,7 +23,7 @@ export default function SectionHeading({
   return (
     <div className={clsx("md:flex justify-center flex-row items-center", containerClassName)}>
       <h2 className={clsx(
-        "lg:text-5xl text-3xl text-[var(--primary-button)] font-bold lg:pb-4 text-center relative",
+        "lg:text-5xl text-3xl text-[var(--primary-button)] font-bold lg:pb-4 text-center relative w-fit mx-auto",
         className
       )}>
         {children}

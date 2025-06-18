@@ -34,7 +34,7 @@ export default function HowItWorks() {
     >
       How It Works
     </SectionHeading>
-              <p className="lg:text-xl max-w-3xl text-sm mt-4 text-center mx-auto text-[var(--secondary-head)]">
+              <p className="lg:text-xl md:max-w-3xl max-w-[90%] text-sm mt-4 text-center mx-auto text-[var(--secondary-head)]">
                 Onlearing  is one powerful online software suite that combines all the tools needed to run a successful school or office.
               </p>
             </header>
