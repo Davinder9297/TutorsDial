@@ -1,10 +1,13 @@
+"use client";
 import Image from "next/image";
 import MaxFullWidthWrapper from "./max-full-width-wrapper";
 import MaxWidthWrapper from "./max-width-wrapper";
 import CustomButton from "../common/button";
 import InputField from "../common/input";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+    const router = useRouter();
   return (
     <MaxFullWidthWrapper>
     <footer className="relative bg-[var(--secondary-bg)] text-[var(--secondary-button)] mt-12 pb-12 font-medium">
@@ -15,10 +18,10 @@ const Footer = () => {
       <div className="relative z-10 mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <Image src="/images/full-logo.svg" alt="onlearn" width={250} height={250} />
+            <Image src="/images/full-logo.svg" alt="onlearn" width={250} height={250} className="cursor-pointer" onClick={()=>router.push("/")} />
           </div>
           <div className="flex items-start gap-2 text-sm">
-            <Image src={"/images/footer-icons/Location.png"} alt="" width={40} height={40} />
+            <Image src={"/images/footer-icons/Location.png"} alt="" width={40} height={40}/>
             <p className="max-w-[50%]">
               <span className="font-bold ">Address:<br/></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             </p>
