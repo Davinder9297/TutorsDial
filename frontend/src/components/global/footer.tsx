@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="relative z-10 mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <Image src="/images/full-logo.svg" alt="onlearn" width={250} height={250} className="cursor-pointer" onClick={()=>router.push("/")} />
+            <Image src="/images/full-logo.png" alt="onlearn" width={250} height={250} className="cursor-pointer" onClick={()=>router.push("/")} />
           </div>
           <div className="flex items-start gap-2 text-sm">
             <Image src={"/images/footer-icons/Location.png"} alt="" width={40} height={40}/>
