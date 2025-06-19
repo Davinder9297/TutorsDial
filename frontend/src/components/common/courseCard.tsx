@@ -51,7 +51,7 @@ const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
       <p className="text-lg font-bold text-[var(--primary-head)]">₹{price}</p>
       <p className="text-sm line-through text-gray-400">₹{originalPrice}</p>
     </div>
-    <CustomButton title="Apply Now" className="!text-xs !w-fit" onClick={()=>router.push("/details/1")}/>
+    <CustomButton title="Apply Now" className="!text-xs !w-fit" onClick={()=>router.push("/details")}/>
   </div>
 </div>
 
