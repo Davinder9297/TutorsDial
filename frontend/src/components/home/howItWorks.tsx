@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "../../styles/StepsComponent.css";
+import "../../styles/stepsComponent.css";
 import SectionHeading from "../common/headings";
 
 const steps = [
