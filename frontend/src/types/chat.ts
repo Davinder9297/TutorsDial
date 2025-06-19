@@ -3,8 +3,8 @@ export interface ChatUser {
   time: string;
   preview: string;
   image: string;
-  unread?: boolean;
-  active?: boolean;
+  unread: boolean;
+  active: boolean;
 }
 
 export interface SidebarProps {
