@@ -5,6 +5,7 @@ import MaxWidthWrapper from "./max-width-wrapper";
 import CustomButton from "../common/button";
 import InputField from "../common/input";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Footer = () => {
     const router = useRouter();
@@ -20,23 +21,23 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <Image src="/images/full-logo.png" alt="onlearn" width={250} height={250} className="cursor-pointer" onClick={()=>router.push("/")} />
           </div>
-          <div className="flex items-start gap-2 text-sm">
+          {/* <div className="flex items-start gap-2 text-sm">
             <Image src={"/images/footer-icons/Location.png"} alt="" width={40} height={40}/>
             <p className="max-w-[50%]">
               <span className="font-bold ">Address:<br/></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             </p>
-          </div>
+          </div> */}
           <div className="flex items-center gap-2 text-sm">
 <Image src={"/images/footer-icons/Calling.png"} alt="" width={20} height={20} />
-            <span>Tel: +9229341037</span>
+            <Link href='tel:+919884426804'>Tel: +91 9884426804</Link>
           </div>
           <div className="flex items-center gap-2 text-sm">
 <Image src={"/images/footer-icons/Time-Circle.png"} alt="" width={20} height={20} />
-            <span>Response hours: 8 to 20</span>
+            <span>Response time: 10am-8pm (Monday - Friday) </span>
           </div>
           <div className="flex items-center gap-2 text-sm">
 <Image src={"/images/footer-icons/Message.png"} alt="" width={20} height={20} />
-            <span>Email: info@onlearn.com</span>
+            <span>Email: <Link href="mailto:info@tutorsdial.com">info@tutorsdial.com</Link></span>
           </div>
         </div>
 
@@ -44,10 +45,11 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3 text-[var(--secondary-head)] text-[15px] md:mt-8">Categories</h4>
           <ul className="space-y-1 text-sm text-[#0B7077]">
-            <li>Counseling</li>
-            <li>Health and fitness</li>
-            <li>Individual development</li>
-            <li>more</li>
+            <li>Kg</li>
+            <li>School exams</li>
+            <li>Competitive exams</li>
+            <li>IT Courses</li>
+            <li>Hobbies</li>
           </ul>
         </div>
 
