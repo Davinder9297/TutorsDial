@@ -16,7 +16,7 @@ function Hero() {
             <MaxWidthWrapper>
                 <div className="flex flex-col lg:gap-6 absolute lg:top-16 sm:top-8 sm:gap-12 top-0">
                     <div className="bg-white rounded-md text-[var(--primary-text)] px-6 py-2 text-base font-medium w-fit">Never stop learning</div>
-                    <div className="text-[var(--primary-head)] px-6 py-2 lg:text-6xl font-bold lg:max-w-3xl md:max-w-2xl sm:max-w-[60%] max-w-[80%] sm:leading-snug text-xl sm:text-3xl md:text-5xl">Find the Right Tutor Near You – Learn Better, Smarter, Faster!</div>
+                    <div className="text-[var(--primary-head)] px-6 py-2 lg:text-6xl font-bold lg:max-w-3xl md:max-w-2xl sm:max-w-[60%] max-w-[70%] sm:leading-snug text-lg sm:text-3xl md:text-5xl -ml-6 sm:ml-0">Find the Right Tutor Near You – Learn Better, Smarter, Faster!</div>
                     <div className="flex gap-8 sm:mt-16 md:mt-0">
                         <CustomButton title="View Tutor" className="!w-fit"/>
                         <div className="text-sm md:flex items-center gap-2 my-auto hidden ">
