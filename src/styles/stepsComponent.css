@@ -1,0 +1,171 @@
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.step-item {
+  max-width: 300px;
+}
+
+/* ==== CIRCLE WRAPPERS ==== */
+.circle-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1rem;
+}
+
+/* Outer circle + 2 dots rotate together */
+.outer-circle-wrapper {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 0;
+  left: 0;
+}
+
+/* Thin outer circle */
+.outer-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  /* border: px solid; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Inner circle (thicker) */
+.inner-circle {
+  width: 120px;
+  height: 120px;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  border: 28px solid;
+  position: absolute;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Center circle with text */
+.center-circle {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2E2E2E;
+}
+.step-label {
+  font-size: 0.8rem;
+  color: #2E2E2E;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* ==== DOTS ON OUTER CIRCLE ==== */
+.rotating-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.top-dot {
+  top: -5px;
+  left: calc(50% - 5px);
+}
+.bottom-dot {
+  bottom: -5px;
+  left: calc(50% - 5px);
+}
+
+/* ==== ANIMATIONS ==== */
+.rotating-clockwise {
+  animation: rotateClockwise 8s linear infinite;
+}
+.rotating-counterclockwise {
+  animation: rotateCounterClockwise 10s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateCounterClockwise {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* ==== TEXT AND TITLES ==== */
+.step-title {
+  font-size: 1.2rem;
+  color: #f4a300;
+  margin-bottom: 0.5rem;
+}
+.step-description {
+  font-size: 0.9rem;
+  color: #555;
+  white-space: pre-line;
+}
+
+/* ==== COLORS ==== */
+.gold .outer-circle,
+.gold .rotating-dot {
+  color: #f4c542;
+  background: linear-gradient(135deg, #D82108, #E2A11A);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), black calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 3px));
+  box-shadow: #CF9114;
+}
+.gold .inner-circle {
+  border-color: #E4A321;
+}
+
+.orange .outer-circle,
+.orange .rotating-dot {
+  color: #f2872f;
+  background: linear-gradient(135deg, #D82108, #F97549);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), black calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 3px));
+  box-shadow: #EF4F19;
+  filter: drop-shadow(0 0 6px #EF4F19);
+}
+.orange .inner-circle {
+  border-color: #F97549;
+}
+
+.blue .outer-circle,
+.blue .rotating-dot {
+  color: #1CC0CB;
+  background: linear-gradient(135deg, #6BCDEE, #1CC0CB);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), black calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1px), black calc(100% - 3px));
+  box-shadow: #16858C;
+}
+.blue .inner-circle {
+  border-color: #a2e7f4;
+}
