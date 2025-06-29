@@ -14,6 +14,9 @@ bio?: string;
 phoneNumber?: string;
 isEmailVerified: boolean;
 isPhoneVerified: boolean;
+resetPasswordToken?: string;
+resetPasswordExpires?: Date;
+
 }
 
 const userSchema = new Schema<IUser>(
@@ -30,7 +33,8 @@ const userSchema = new Schema<IUser>(
     phoneNumber: { type: String,required:true },
     isEmailVerified: { type: Boolean, default: false },
     isPhoneVerified: { type: Boolean, default: false },
-
+resetPasswordToken: { type: String },
+resetPasswordExpires: { type: Date },
   },
   { timestamps: true }
 );
