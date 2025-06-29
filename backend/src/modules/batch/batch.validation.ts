@@ -36,3 +36,9 @@ export const updateBatchSchema = Joi.object({
   }),
   category: Joi.string().optional()
 });
+export const getAllBatchesQuerySchema = Joi.object({
+  keyword: Joi.string().optional(),
+  category: Joi.string().optional(),
+  page: Joi.number().integer().min(1).optional().default(1),
+  limit: Joi.number().integer().min(1).optional().default(10)
+});

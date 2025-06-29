@@ -17,21 +17,45 @@ export const getBatchesByTutorService = async (tutorId: string) => {
   return await Batch.find({ tutor: tutorId }).sort({ createdAt: -1 });
 };
 
-export const getBatchesByCategoryService = async (category: string) => {
-  return await Batch.find({ category: new RegExp(category, 'i') }).sort({ createdAt: -1 });
-};
-
 export const getBatchByIdService = async (id: string) => {
   return await Batch.findById(id);
 };
 
-export const searchBatchesService = async (keyword: string) => {
-  return await Batch.find({
-    $or: [
-      { title: { $regex: keyword, $options: 'i' } },
-      { description: { $regex: keyword, $options: 'i' } },
-      { category: { $regex: keyword, $options: 'i' } },
-      { class: { $regex: keyword, $options: 'i' } },
-    ]
-  });
+export const getAllBatchesService = async (query: {
+  keyword?: string;
+  category?: string; // this will be ObjectId now
+  page?: number;
+  limit?: number;
+}) => {
+  const { keyword = '', category = '', page = 1, limit = 10 } = query;
+
+  const filter: any = {};
+
+  if (keyword) {
+    const regex = new RegExp(keyword, 'i');
+    filter.$or = [
+      { title: regex },
+      { description: regex },
+      { class: regex }
+    ];
+  }
+
+  if (category) {
+    filter.category = category;
+  }
+
+  const total = await Batch.countDocuments(filter);
+  const results = await Batch.find(filter)
+    .populate('category', 'name') // populate category name
+    .sort({ createdAt: -1 })
+    .skip((page - 1) * limit)
+    .limit(limit);
+
+  return {
+    total,
+    page,
+    limit,
+    totalPages: Math.ceil(total / limit),
+    results
+  };
 };

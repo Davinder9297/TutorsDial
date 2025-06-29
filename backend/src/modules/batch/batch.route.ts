@@ -4,12 +4,11 @@ import {
   deleteBatch,
   updateBatch,
   getBatchesByTutor,
-  getBatchesByCategory,
   getBatchDetails,
-  searchBatches
+  getAllBatches
 } from './batch.controller';
 import { validate } from '../../middlewares/validate.middlware';
-import { createBatchSchema, updateBatchSchema } from './batch.validation';
+import { createBatchSchema, getAllBatchesQuerySchema, updateBatchSchema } from './batch.validation';
 import { authenticate } from '../../middlewares/auth.middleware';
 import { upload } from '../../middlewares/upload';
 
@@ -19,8 +18,7 @@ router.post('/', validate(createBatchSchema),authenticate,upload.single('batchIm
 router.put('/:id',validate(updateBatchSchema),authenticate,upload.single('batchImage'), updateBatch);
 router.delete('/:id',authenticate, deleteBatch);
 router.get('/tutor/:tutorId', getBatchesByTutor);
-router.get('/category/:category', getBatchesByCategory);
-router.get('/search', searchBatches);
+router.get('/', validate(getAllBatchesQuerySchema), getAllBatches);
 router.get('/:id', getBatchDetails);
 
 export default router;

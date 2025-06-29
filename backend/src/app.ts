@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 import { xssSanitizer } from './middlewares/xssSanitizer';
 import userRoutes from './modules/user/user.route'
 import batchRoutes from './modules/batch/batch.route';
+import categoryRoutes from './modules/category/category.route';
 dotenv.config();
 
 const app: Application = express();
@@ -36,6 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/user',userRoutes)
 app.use('/api/batches', batchRoutes);
+app.use('/api/category', categoryRoutes);
 // --- Sample Route ---
 app.get('/', (req: Request, res: Response) => {
   res.status(200).json({ status: 'OK', message: 'API is running' });

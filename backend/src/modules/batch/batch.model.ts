@@ -12,10 +12,10 @@ export interface IBatch extends Document {
   mode: 'online' | 'offline' | 'hybrid';
   address?: string;
   category: string;
-  tutor: mongoose.Types.ObjectId;
+  tutor: mongoose.  Types.ObjectId;
 }
 
-const batchSchema = new Schema<IBatch>(
+const batchSchema = new Schema(
   {
     batchImage: { type: String, required: true },
     title: { type: String, required: true },
@@ -27,7 +27,7 @@ const batchSchema = new Schema<IBatch>(
     class: { type: String, required: true },
     mode: { type: String, enum: ['online', 'offline', 'hybrid'], required: true },
     address: { type: String }, // Only required if mode is offline or hybrid
-    category: { type: String, required: true },
+    category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
     tutor: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   },
   { timestamps: true }

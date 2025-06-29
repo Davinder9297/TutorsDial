@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createBatchService, deleteBatchService, updateBatchService, getBatchesByTutorService, getBatchesByCategoryService, getBatchByIdService, searchBatchesService } from './batch.service';
+import { createBatchService, deleteBatchService, updateBatchService, getBatchesByTutorService, getBatchByIdService, getAllBatchesService } from './batch.service';
 import { Batch } from './batch.model';
 import mongoose from 'mongoose';
 
@@ -53,15 +53,6 @@ export const getBatchesByTutor = async (req: Request, res: Response) => {
   }
 };
 
-export const getBatchesByCategory = async (req: Request, res: Response) => {
-  try {
-    const batches = await getBatchesByCategoryService(req.params.category);
-    res.json({success:false,batches});
-  } catch (err) {
-    res.status(500).json({ success:false, message: 'Failed to get batches by category', details: err });
-  }
-};
-
 export const getBatchDetails = async (req: Request, res: Response) => {
   try {
     const batch = await getBatchByIdService(req.params.id);
@@ -72,12 +63,19 @@ export const getBatchDetails = async (req: Request, res: Response) => {
   }
 };
 
-export const searchBatches = async (req: Request, res: Response) => {
+export const getAllBatches = async (req: Request, res: Response) => {
   try {
-    const { keyword } = req.query;
-    const results = await searchBatchesService(String(keyword));
-    res.json(results);
+    const { keyword, category, page = '1', limit = '10' } = req.query;
+
+    const result = await getAllBatchesService({
+      keyword: keyword as string,
+      category: category as string,
+      page: parseInt(page as string),
+      limit: parseInt(limit as string)
+    });
+
+    res.json({success:true,message:"Get all batches successfully",result});
   } catch (err) {
-    res.status(500).json({ error: 'Search failed', details: err });
+    res.status(500).json({success:false, message: 'Failed to fetch batches', details: err });
   }
 };
